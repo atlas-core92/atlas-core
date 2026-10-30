@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="ATLAS — console central de inteligência e operações.">
+  <title>ATLAS — Core 0.1</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="ATLAS início">
+        <span class="brand-mark">A</span>
+        <span><strong>ATLAS</strong><small>INTELLIGENCE SYSTEM</small></span>
+      </a>
+      <div class="side-label">NAVEGAÇÃO</div>
+      <button class="nav-item active" data-view="overview"><span>◈</span> Visão geral</button>
+      <button class="nav-item" data-view="core"><span>⌘</span> Core</button>
+      <button class="nav-item" data-view="modules"><span>▦</span> Módulos</button>
+      <div class="sidebar-bottom">
+        <div class="system-card">
+          <span class="pulse"></span><span><b>Sistema local</b><small>Core 0.1 inicializado</small></span>
+        </div>
+        <small class="version">ATLAS BUILD 0.1.0 · PROTÓTIPO FUNCIONAL</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><span class="eyebrow">CENTRAL DE COMANDO</span><h1 id="page-title">Visão geral</h1></div>
+        <div class="top-meta"><span class="live-dot"></span> AMBIENTE DE DESENVOLVIMENTO <span class="top-divider"></span><span id="clock">--:--:--</span></div>
+      </header>
+
+      <section id="overview-view" class="view">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">BEM-VINDO À ATLAS</span>
+            <h2>Um centro de comando.<br><em>Possibilidades sem limites.</em></h2>
+            <p>A estrutura inicial está pronta. O núcleo já reconhece comandos internos e está preparado para receber novos módulos.</p>
+            <button class="primary-btn" id="focus-command">Abrir linha de comando <span>↗</span></button>
+          </div>
+          <div class="core-orb" aria-label="Representação visual do núcleo ATLAS">
+            <div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div><div class="orb-ring ring-three"></div>
+            <div class="orb-core"><span>A</span></div><div class="orb-caption">CORE <b>ONLINE</b></div>
+          </div>
+        </div>
+
+        <div class="section-heading"><div><span class="eyebrow">ARQUITETURA</span><h3>Estado do sistema</h3></div><span class="muted">Atualizado em tempo real</span></div>
+        <div class="status-grid">
+          <article class="status-card"><div class="card-top"><span>CORE</span><span class="status-pill ready">ATIVO</span></div><strong>0.1</strong><p>Roteador de comandos locais</p><div class="meter"><i style="width:100%"></i></div></article>
+          <article class="status-card"><div class="card-top"><span>MEMORY</span><span class="status-pill planned">PLANEJADO</span></div><strong>—</strong><p>Memória persistente ainda não conectada</p><div class="meter"><i style="width:8%"></i></div></article>
+          <article class="status-card"><div class="card-top"><span>SCAN</span><span class="status-pill planned">PLANEJADO</span></div><strong>—</strong><p>Pesquisa externa ainda não conectada</p><div class="meter"><i style="width:4%"></i></div></article>
+          <article class="status-card"><div class="card-top"><span>VOICE</span><span class="status-pill planned">PLANEJADO</span></div><strong>—</strong><p>Interface de voz será adicionada depois</p><div class="meter"><i style="width:2%"></i></div></article>
+        </div>
+
+        <div class="command-panel" id="command-panel">
+          <div class="command-heading"><div><span class="eyebrow">INTERAÇÃO DIRETA</span><h3>Linha de comando</h3></div><span class="terminal-tag">ATLAS://CORE</span></div>
+          <div class="terminal" id="terminal" role="log" aria-live="polite">
+            <div class="terminal-line system-line">ATLAS CORE 0.1 inicializado. Digite <b>/ajuda</b> para ver os comandos disponíveis.</div>
+          </div>
+          <form id="command-form" class="command-form">
+            <span class="prompt">ATLAS ›</span><input id="command-input" autocomplete="off" placeholder="Digite um comando..." aria-label="Digite um comando">
+            <button type="submit" aria-label="Enviar comando">ENVIAR <span>↗</span></button>
+          </form>
+          <div class="command-hints"><span>EXPERIMENTE</span><button data-command="/status">/status</button><button data-command="/modulos">/modulos</button><button data-command="/sobre">/sobre</button></div>
+        </div>
+      </section>
+
+      <section id="core-view" class="view hidden">
+        <div class="section-heading"><div><span class="eyebrow">MÓDULO 01</span><h3>ATLAS CORE</h3></div><span class="status-pill ready">OPERACIONAL LOCALMENTE</span></div>
+        <div class="detail-card"><h2>O primeiro núcleo está de pé.</h2><p>Esta versão implementa um roteador simples de comandos no navegador. Ela não chama um modelo de IA, não acessa arquivos privados e não executa ações no computador.</p><ul><li>Recebe comandos pela linha de comando.</li><li>Reconhece ajuda, estado do sistema, lista de módulos e informações da versão.</li><li>Apresenta respostas identificadas como respostas locais do protótipo.</li></ul><button class="secondary-btn" id="core-command">Testar o Core</button></div>
+      </section>
+
+      <section id="modules-view" class="view hidden">
+        <div class="section-heading"><div><span class="eyebrow">MAPA DE EXPANSÃO</span><h3>Módulos da ATLAS</h3></div><span class="muted">Arquitetura modular</span></div>
+        <div class="module-list">
+          <article><span class="module-icon">⌘</span><div><b>CORE</b><p>Orquestração e interpretação de comandos</p></div><span class="status-pill ready">VERSÃO 0.1</span></article>
+          <article><span class="module-icon">▤</span><div><b>MEMORY</b><p>Memória persistente, preferências e contexto</p></div><span class="status-pill planned">PRÓXIMA ETAPA</span></article>
+          <article><span class="module-icon">◎</span><div><b>SCAN</b><p>Pesquisa, coleta e síntese de informações</p></div><span class="status-pill planned">PLANEJADO</span></article>
+          <article><span class="module-icon">▥</span><div><b>ANALYTICS</b><p>Análise de dados, arquivos e relatórios</p></div><span class="status-pill planned">PLANEJADO</span></article>
+          <article><span class="module-icon">◖</span><div><b>VOICE</b><p>Entrada e saída de voz</p></div><span class="status-pill planned">PLANEJADO</span></article>
+          <article><span class="module-icon">↗</span><div><b>ACTION + GUARD</b><p>Execução autorizada, permissões e auditoria</p></div><span class="status-pill planned">PLANEJADO</span></article>
+        </div>
+      </section>
+      <footer>ATLAS · PROJETO INDEPENDENTE DO PRIHT <span>Construído por etapas. Sem ações ocultas.</span></footer>
+    </main>
+  </div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
